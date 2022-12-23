@@ -19,7 +19,8 @@ import java.util.Date;
 public class Course {
     @Id
     @GeneratedValue
-    private String idcourse;
+    private String idcourse; // select * from course where idcourse=1
+
     private String idteacher;
     private String idmanager;
     private String namecourse;
@@ -28,5 +29,6 @@ public class Course {
     private Date startdate;
     private Date finishdate;
     private String status;
+
 
 }

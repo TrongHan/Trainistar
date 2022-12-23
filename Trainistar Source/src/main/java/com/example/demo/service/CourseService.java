@@ -29,21 +29,30 @@ public class CourseService {
         repository.deleteById(id);
         return "Course remove ||"+id;
     }
+
+
+
+
+
+
+
+
     public List<Course> getInactiveCourses(){
-        return repository.findCoursesWithStatus("Inactive");
+        return repository.findCoursesWithStatus("REJECTED");
     }
     public List<Course> getActiveCourses(){
-        return repository.findCoursesWithStatus("Accepted");
+        return repository.findCoursesWithStatus("ACCEPTED");
     }
     public Course activeCourse(Course course){
         Course exist=repository.findById(course.getIdcourse()).orElse(null);
-        exist.setStatus("Accepted");
+        exist.setStatus("ACCEPTED");
         return repository.save(exist);
     }
     public Course inactiveCourse(Course course){
         Course exist=repository.findById(course.getIdcourse()).orElse(null);
-        exist.setStatus("Not Accepted");
+        exist.setStatus("REJECTED");
         return repository.save(exist);
     }
+    public List<Course> getCourseNotRejected() {return repository.findCoursesNotHaveStatus("REJECTED");}
 
 }

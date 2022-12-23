@@ -28,10 +28,12 @@ public class CourseController {
     public List<Course> getAllCourse(){
         return service.getCourses();
     }
-    @GetMapping("/course/{id}")
+    @GetMapping("/course/{id}") // id =1 => /course/1
     public Course findById(@PathVariable String id){
         return service.getCourseById(id);
     }
+    // (@PathVariable String id, @RequestBody body)
+
     @GetMapping("/inactiveCourses")
     public List<Course> findInactiveCourse(){
         return service.getInactiveCourses();
@@ -40,6 +42,7 @@ public class CourseController {
     public List<Course> findActiveCourse(){
         return service.getActiveCourses();
     }
+
     @PutMapping("/activeCourse")
     public Course activeCourse(@RequestBody Course course){
         return service.activeCourse(course);
@@ -48,4 +51,13 @@ public class CourseController {
     public Course inactiveCourse(@RequestBody Course course){
         return service.inactiveCourse(course);
     }
+
+    @DeleteMapping("/course/{id}")
+    public String deleteCourse(@PathVariable String id ){
+        return service.deleteCourse(id);
+    }
+    @GetMapping("/notInactiveCourses")
+    public List<Course> findNotIntactiveCourses() {return service.getCourseNotRejected();}
 }
+
+// api/4
