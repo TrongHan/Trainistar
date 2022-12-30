@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="trainistar@trainistar-mysql-azure.mysql.database.azure.com">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>5.7.39</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="information_schema"/>
+    <schema id="3" parent="1" name="mysql"/>
+    <schema id="4" parent="1" name="performance_schema"/>
+    <schema id="5" parent="1" name="sys"/>
+    <schema id="6" parent="1" name="trainistar">
+      <Current>1</Current>
+    </schema>
+    <table id="7" parent="6" name="admin">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="8" parent="6" name="certificate">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="9" parent="6" name="comment">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="10" parent="6" name="course">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="11" parent="6" name="course_seq">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="12" parent="6" name="course_skill">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="13" parent="6" name="course_student">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="14" parent="6" name="manager">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="15" parent="6" name="question">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="16" parent="6" name="questionbank">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="17" parent="6" name="rating">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="18" parent="6" name="skill">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="19" parent="6" name="student_certificate">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="20" parent="6" name="user_">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <column id="21" parent="7" name="id">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="22" parent="7" name="password">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="23" parent="7" name="fullname">
+      <DasType>varchar(100)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="24" parent="7" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="26" parent="8" name="idCertificate">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="27" parent="8" name="nameCertificate">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <index id="28" parent="8" name="PRIMARY">
+      <ColNames>idCertificate</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="30" parent="9" name="idComment">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="31" parent="9" name="idCourse">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="32" parent="9" name="comment">
+      <DasType>varchar(1000)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="33" parent="9" name="dateComment">
+      <DasType>date|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="34" parent="9" name="FK_Comment_Course">
+      <ColNames>idCourse</ColNames>
+      <RefColNames>idCourse</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <index id="35" parent="9" name="PRIMARY">
+      <ColNames>idComment</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="9" name="FK_Comment_Course">
+      <ColNames>idCourse</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="37" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="38" parent="10" name="idCourse">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="39" parent="10" name="idTeacher">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="40" parent="10" name="idManager">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="41" parent="10" name="nameCourse">
+      <DasType>varchar(200)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="42" parent="10" name="description">
+      <DasType>varchar(1000)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="43" parent="10" name="idQuestionBank">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="44" parent="10" name="startDate">
+      <DasType>date|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="45" parent="10" name="finishDate">
+      <DasType>date|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="46" parent="10" name="status">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="47" parent="10" name="id_course">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="48" parent="10" name="finish_date">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="49" parent="10" name="id_manager">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="50" parent="10" name="id_question_bank">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="51" parent="10" name="id_teacher">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="52" parent="10" name="name_course">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="53" parent="10" name="start_date">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="54" parent="10" name="idquestion_bank">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <foreign-key id="55" parent="10" name="FK_Course_User_">
+      <ColNames>idTeacher</ColNames>
+      <RefColNames>idUser</RefColNames>
+      <RefTableName>user_</RefTableName>
+    </foreign-key>
+    <index id="56" parent="10" name="PRIMARY">
+      <ColNames>idCourse</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="57" parent="10" name="FK_Course_User_">
+      <ColNames>idTeacher</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="58" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="59" parent="11" name="next_val">
+      <DasType>bigint(20)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="60" parent="12" name="idCourse">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="61" parent="12" name="idSkill">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="62" parent="12" name="FK_Course_Skill_Course">
+      <ColNames>idCourse</ColNames>
+      <RefColNames>idCourse</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="63" parent="12" name="FK_Course_Skill_Skill">
+      <ColNames>idSkill</ColNames>
+      <RefColNames>idSkill</RefColNames>
+      <RefTableName>skill</RefTableName>
+    </foreign-key>
+    <index id="64" parent="12" name="PRIMARY">
+      <ColNames>idCourse
+idSkill</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="12" name="FK_Course_Skill_Skill">
+      <ColNames>idSkill</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="66" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="67" parent="13" name="idCourse">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="68" parent="13" name="idStudent">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="69" parent="13" name="mark">
+      <DasType>float|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="70" parent="13" name="FK_Course_Student_Course">
+      <ColNames>idCourse</ColNames>
+      <RefColNames>idCourse</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="71" parent="13" name="FK_Course_Student_User_">
+      <ColNames>idStudent</ColNames>
+      <RefColNames>idUser</RefColNames>
+      <RefTableName>user_</RefTableName>
+    </foreign-key>
+    <index id="72" parent="13" name="PRIMARY">
+      <ColNames>idCourse
+idStudent</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="73" parent="13" name="FK_Course_Student_User_">
+      <ColNames>idStudent</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="74" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="75" parent="14" name="id">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="76" parent="14" name="password">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="77" parent="14" name="fullName">
+      <DasType>varchar(200)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="78" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="79" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="80" parent="15" name="idQuestion">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="81" parent="15" name="idQuestionBank">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="82" parent="15" name="question">
+      <DasType>varchar(500)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="83" parent="15" name="answer">
+      <DasType>varchar(500)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="84" parent="15" name="difficulty">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="85" parent="15" name="FK_Question_QuestionBank">
+      <ColNames>idQuestionBank</ColNames>
+      <RefColNames>idQuestionBank</RefColNames>
+      <RefTableName>questionbank</RefTableName>
+    </foreign-key>
+    <index id="86" parent="15" name="PRIMARY">
+      <ColNames>idQuestion</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="87" parent="15" name="FK_Question_QuestionBank">
+      <ColNames>idQuestionBank</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="88" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="89" parent="16" name="idQuestionBank">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="90" parent="16" name="nameQuestionBank">
+      <DasType>varchar(200)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="91" parent="16" name="description">
+      <DasType>varchar(100)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="92" parent="16" name="PRIMARY">
+      <ColNames>idQuestionBank</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="94" parent="17" name="idRating">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="95" parent="17" name="rating">
+      <DasType>varchar(150)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="96" parent="17" name="idCourse">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="97" parent="17" name="idStudent">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="98" parent="17" name="FK_Rating_Course">
+      <ColNames>idCourse</ColNames>
+      <RefColNames>idCourse</RefColNames>
+      <RefTableName>course</RefTableName>
+    </foreign-key>
+    <foreign-key id="99" parent="17" name="FK_Rating_Student">
+      <ColNames>idStudent</ColNames>
+      <RefColNames>idUser</RefColNames>
+      <RefTableName>user_</RefTableName>
+    </foreign-key>
+    <index id="100" parent="17" name="PRIMARY">
+      <ColNames>idRating</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="101" parent="17" name="FK_Rating_Course">
+      <ColNames>idCourse</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="102" parent="17" name="FK_Rating_Student">
+      <ColNames>idStudent</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="103" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="104" parent="18" name="idSkill">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="105" parent="18" name="nameSkill">
+      <DasType>varchar(30)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="106" parent="18" name="level">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="107" parent="18" name="idManager">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="108" parent="18" name="FK_Skill_Manager">
+      <ColNames>idManager</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>manager</RefTableName>
+    </foreign-key>
+    <index id="109" parent="18" name="PRIMARY">
+      <ColNames>idSkill</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="110" parent="18" name="FK_Skill_Manager">
+      <ColNames>idManager</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="111" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="112" parent="19" name="idCertificate">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="113" parent="19" name="idStudent">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="114" parent="19" name="PRIMARY">
+      <ColNames>idCertificate
+idStudent</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="115" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="116" parent="20" name="idUser">
+      <DasType>varchar(10)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="117" parent="20" name="userName">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="118" parent="20" name="password">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="119" parent="20" name="firstName">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="120" parent="20" name="lastName">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="121" parent="20" name="email">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="122" parent="20" name="phoneNumber">
+      <DasType>varchar(10)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="123" parent="20" name="gender">
+      <DasType>varchar(6)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="124" parent="20" name="typeUser">
+      <DasType>tinyint(4)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <index id="125" parent="20" name="PRIMARY">
+      <ColNames>idUser</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="126" parent="20" name="userName">
+      <ColNames>userName</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="127" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="128" parent="20" name="userName">
+      <UnderlyingIndexName>userName</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class CourseService {
     @Autowired
@@ -27,16 +26,8 @@ public class CourseService {
     }
     public String deleteCourse(String id){
         repository.deleteById(id);
-        return "Course remove ||"+id;
+        return "Course remove ||" + id;
     }
-
-
-
-
-
-
-
-
     public List<Course> getInactiveCourses(){
         return repository.findCoursesWithStatus("REJECTED");
     }
