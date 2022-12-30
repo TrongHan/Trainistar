@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +16,7 @@ import java.util.Date;
 public class Course {
     @Id
     @GeneratedValue
+    @Column(insertable=false, updatable=false)
     private String idcourse; // select * from course where idcourse=1
 
     private String idteacher;
@@ -29,6 +27,5 @@ public class Course {
     private Date startdate;
     private Date finishdate;
     private String status;
-
 
 }
