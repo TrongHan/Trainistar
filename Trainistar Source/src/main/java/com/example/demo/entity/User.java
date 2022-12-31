@@ -14,21 +14,13 @@ import org.springframework.web.bind.annotation.Mapping;
 public class User {
     @Id
     @GeneratedValue
-    private String idUser;
-
-    private String userName;
-
+    private String iduser;
+    private String username;
     private String password;
-
-    private String firstName;
-
-    private String lastName;
-
+    private String firstname;
+    private String lastname;
     private String email;
-
-    private String phoneNumber;
-
+    private String phonenumber;
     private String gender;
-
-    private byte typeUser;
+    private byte typeuser;
 }
