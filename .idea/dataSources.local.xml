@@ -7,21 +7,8 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
       <user-name>trainistar</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="trainistar" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
-      <ssl-config>
-        <ca-cert>D:\Visual Studio Source\ssl\DigiCertGlobalRootCA.crt.pem</ca-cert>
-        <enabled>true</enabled>
-        <mode>REQUIRE</mode>
-      </ssl-config>
+      <schema-mapping />
     </data-source>
   </component>
 </project>
